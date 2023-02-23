@@ -2,7 +2,7 @@ import { ControlList,Button } from "./FeedBackField.styled";
 
 export const FeedBackField = ({onLeaveFeedback, options}) => {
     const btnType = Object.keys(options);
-    console.log(btnType)
+   
     return (
         
         <ControlList>
