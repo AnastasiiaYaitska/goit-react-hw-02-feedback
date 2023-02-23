@@ -1,15 +1,19 @@
 import { ControlList,Button } from "./FeedBackField.styled";
 
 export const FeedBackField = ({onLeaveFeedback, options}) => {
-    const btnType = Object.keys(options);
-   
-    return (
-        
+    const btnTypes = Object.keys(options);
+    return ( 
+           
         <ControlList>
-             <li><Button onClick={()=>{onLeaveFeedback(btnType[0])}}>Good</Button></li>
-             <li><Button onClick={()=>{onLeaveFeedback(btnType[1])}}>Neutral</Button></li>
-             <li><Button onClick={()=>{onLeaveFeedback(btnType[2])}}>Bad</Button></li>
+            {btnTypes.map(btnType => {
+                return (
+                    <li>
+                        <Button onClick={() => { onLeaveFeedback(btnType) }}>{btnType.charAt(0).toUpperCase() + btnType.slice(1)}</Button>
+                    </li>)
+            })}
+            
         </ControlList>
+
+       )    
     
-    );
  };
